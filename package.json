@@ -1,0 +1,25 @@
+{
+  "name": "vanilla-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-fat-css": "postcss src/css/styles.css -o src/css/tailwind.fat.css",
+    "build-prod-css": "NODE_ENV=production postcss src/css/styles.css -o dist/css/styles.css",
+    "remove-tailwind-fat": "rm dist/css/tailwind.fat.css",
+    "copy-files": "cpx 'src/**/*.*' dist",
+    "build": "npm run copy-files && npm run build-prod-css && npm run remove-tailwind-fat"
+  },
+  "keywords": [],
+  "author": "Adam Tzur",
+  "license": "ISC",
+  "dependencies": {
+    "cpx": "^1.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^3.0.12"
+  }
+}
